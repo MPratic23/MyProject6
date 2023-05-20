@@ -43,7 +43,6 @@ if not show_excellent_cars:
 # In[7]:
 
 
-show_excellent_cars
 
 
 # In[8]:
@@ -116,20 +115,17 @@ st.plotly_chart(fig1)
 # In[16]:
 
 
-df['age']=2023-df['days_listed']
-
+df['day']=2023-df['days_listed']
 def day_category(x):
     if x<5: return '<5'
     elif x>=5 and x<10: return '5-10'
     elif x>=10 and x<20: return '10-20'
-    else: return '>20'
-        
-df['day_category']= df['age'].apply(day_category)
+    else: return '>20'        
+df['day_category']= df['day'].apply(day_category)
 
-df['day_category']
 
 st.write("""
-##### How the model type is affected by its age.
+##### How the model type is affected by days on market.
 """)
 
 list_for_scatter=['model', 'model_year', 'type']
