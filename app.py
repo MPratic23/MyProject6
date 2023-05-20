@@ -127,7 +127,6 @@ def day_category(x):
 df['day_category']= df['age'].apply(day_category)
 
 df['day_category']
--------------------------------------------------
 
 st.write("""
 ##### How the model type is affected by its age.
