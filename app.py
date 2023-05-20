@@ -89,8 +89,6 @@ st.table(filtered_type)
 # In[13]:
 
 
-filtered_type
-
 
 # In[14]:
 
@@ -129,17 +127,19 @@ def day_category(x):
         
 df['day_category']= df['age'].apply(day_category)
 
+df['day_category']
+-------------------------------------------------
 
 st.write("""
 ##### How the model type is affected by its age.
 """)
 
-list_for_scatter=['model', 'model_year', 'days_listed', 'type']
+list_for_scatter=['model', 'model_year', 'type']
 choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
-fig2 = px.scatter(df, x='days_listed', y=choice_for_scatter, hover_data=['model_year'])
+fig2 = px.scatter(df, x='days_listed', y=choice_for_scatter, color='day_category', hover_data=['model_year'])
 
 fig2.update_layout(
-title="<b> Model versus {}</b>".format(choice_for_scatter))
+title="<b> Days on market versus {}</b>".format(choice_for_scatter))
 st.plotly_chart(fig2)
 
 
