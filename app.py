@@ -26,7 +26,6 @@ df = df.drop(df.columns[0], axis=1)
 # In[5]:
 
 
-
 # In[6]:
 
 
@@ -128,7 +127,6 @@ def day_category(x):
     else: return '>20'
         
 df['day_category']= df['age'].apply(day_category)
-
 
 st.write("""
 ##### How the model type is affected by its age.
