@@ -115,6 +115,10 @@ st.plotly_chart(fig1)
 # In[15]:
 
 
+
+# In[16]:
+
+
 df['age']=2023-df['days_listed']
 
 def day_category(x):
@@ -124,10 +128,6 @@ def day_category(x):
     else: return '>20'
         
 df['day_category']= df['age'].apply(day_category)
-
-df['day_category']
-
-# In[16]:
 
 
 st.write("""
@@ -139,7 +139,7 @@ choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
 fig2 = px.scatter(df, x='days_listed', y=choice_for_scatter, hover_data=['model_year'])
 
 fig2.update_layout(
-title="<b> Model type versus (</b>" .format(choice_for_scatter))
+title="<b> Model versus {}</b>".format(choice_for_scatter))
 st.plotly_chart(fig2)
 
 
