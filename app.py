@@ -23,14 +23,8 @@ df = df.drop(df.columns[0], axis=1)
 
 # In[4]:
 
-
-df
-
-
 # In[5]:
 
-
-df.shape
 
 
 # In[6]:
@@ -121,16 +115,17 @@ st.plotly_chart(fig1)
 # In[15]:
 
 
-df['time']=2023-df['days_listed']
+df['age']=2023-df['days_listed']
 
-def days_listed(x):
+def day_category(x):
     if x<5: return '<5'
     elif x>=5 and x<10: return '5-10'
     elif x>=10 and x<20: return '10-20'
     else: return '>20'
         
-df['model_year']= df['time'].apply(days_listed)
+df['day_category']= df['age'].apply(day_category)
 
+df['day_category']
 
 # In[16]:
 
@@ -139,17 +134,13 @@ st.write("""
 ##### How the model type is affected by its age.
 """)
 
-list_for_scatter=['model_year', 'days_listed', 'type']
-choice_for_scatter = st.selectbox('Purchase depends on', list_for_scatter)
-fig2 = px.scatter(df, x='model_year', y=choice_for_scatter, color="days_listed", hover_data=['type'])
+list_for_scatter=['model', 'model_year', 'days_listed', 'type']
+choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
+fig2 = px.scatter(df, x='days_listed', y=choice_for_scatter, hover_data=['model_year'])
 
 fig2.update_layout(
-title="<b> Model type versus model year (</b>" .format(choice_for_scatter))
+title="<b> Model type versus (</b>" .format(choice_for_scatter))
 st.plotly_chart(fig2)
 
 
 # In[ ]:
-
-
-
-
