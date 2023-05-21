@@ -100,7 +100,7 @@ st.write("""
 import plotly.express as px
 
 list_for_hist=['type', 'is_4wd', 'transmission', 'cylinders']
-choice_for_hist = st.selectbox('Seperated by type, 4wd status, transmission, cylinders, list_for_hist)
+choice_for_hist = st.selectbox('Seperated by type ', list_for_hist)
 fig1 = px.histogram(df, x='odometer', color=choice_for_hist)
 
 fig1.update_layout(
