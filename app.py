@@ -94,12 +94,12 @@ st.table(filtered_type)
 st.header('Inquiry of Purchase')
 
 st.write("""
-###### What effects the purchase of an automobile? We'll look at the distribution between transmission type, amount of cylinders, and odometer reading.
+###### What determines the purchase of an automobile? We'll look at the distribution between component parts.
 """)
 
 import plotly.express as px
 
-list_for_hist=['type', 'is_4wd', 'transmission', 'cylinders']
+list_for_hist=['type', 'cylinders', 'is_4wd', 'transmission']
 choice_for_hist = st.selectbox('Seperated by type ', list_for_hist)
 fig1 = px.histogram(df, x='odometer', color=choice_for_hist)
 
