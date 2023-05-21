@@ -99,8 +99,8 @@ st.write("""
 
 import plotly.express as px
 
-list_for_hist=['transmission', 'cylinders', 'odometer']
-choice_for_hist = st.selectbox('Seperated by transmission, cylinders, odometer', list_for_hist)
+list_for_hist=['type', 'is_4wd', 'transmission', 'cylinders']
+choice_for_hist = st.selectbox('Seperated by type, 4wd status, transmission, cylinders, list_for_hist)
 fig1 = px.histogram(df, x='odometer', color=choice_for_hist)
 
 fig1.update_layout(
@@ -130,7 +130,7 @@ st.write("""
 
 list_for_scatter=['model', 'model_year', 'type']
 choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
-fig2 = px.scatter(df, x='days_listed', y=choice_for_scatter, color='day_category', hover_data=['model_year'])
+fig2 = px.scatter(df, x='days_listed', y='model', color='choice_for_scatter', hover_data=['model_year'])
 
 fig2.update_layout(
 title="<b> Days on market versus {}</b>".format(choice_for_scatter))
