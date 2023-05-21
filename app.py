@@ -114,14 +114,6 @@ st.plotly_chart(fig1)
 
 # In[16]:
 
-st.write("""
-##### How the model type is affected by days on market.
-""")
-
-list_for_scatter=['model', 'type', 'model_year']
-choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
-fig2 = px.scatter(df, x='days_listed', hover_data=['model_year'])
-
 df['date']=2022-df['days_listed']
 def day_category(x):
     if x<5: return '<5'
@@ -129,6 +121,14 @@ def day_category(x):
     elif x>=10 and x<20: return '10-20'
     else: return '>20'
 df['day_category']= df['date'].apply(day_category)
+
+st.write("""
+##### How the model type is affected by days on market.
+""")
+
+list_for_scatter=['model', 'type', 'model_year']
+choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
+fig2 = px.scatter(df, x='days_listed', hover_data=['model_year'])
 
 fig2.update_layout(
 title="Days on market versus {}".format(choice_for_scatter))
