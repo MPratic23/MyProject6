@@ -129,7 +129,7 @@ st.write("""
 
 list_for_scatter=['model', 'model_year', 'type']
 choice_for_scatter = st.selectbox('Purchase depends on ', list_for_scatter)
-fig2 = px.scatter(df, x='model', y=choice_for_scatter, hover_data=['model_year'])
+fig2 = px.scatter(df, x='model', hover_data=['model_year'])
 
 fig2.update_layout(
 title="<b> Days on market versus {}</b>".format(choice_for_scatter))
