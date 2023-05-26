@@ -49,8 +49,10 @@ if not show_excellent_cars:
 
 
 model_choice = df['model'].unique()
-make_choice_man = st.selectbox('Select model:', model_choice)
+make_choice_man = st.selectbox('Select model A:', model_choice)
 
+model_choice = df['model'].unique()
+make_choice_man = st.selectbox('Select model B:', model_choice)
 
 # In[9]:
 
