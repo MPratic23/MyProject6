@@ -52,7 +52,7 @@ model_choice = df['model'].unique()
 make_choice_man = st.selectbox('Select model A:', model_choice)
 
 model_choice = df['model'].unique()
-make_choice_man = st.selectbox('Select model B:', model_choice)
+man_option = st.selectbox('Select model B:', model_choice)
 
 # In[9]:
 
@@ -81,7 +81,7 @@ year_range
 # In[12]:
 
 
-filtered_type=df[(df.model==make_choice_man) & (df.model_year.isin(list(actual_range)))]
+filtered_type=df[(df.model==make_choice_man, man_option) & (df.model_year.isin(list(actual_range)))]
 
 st.table(filtered_type)
 
