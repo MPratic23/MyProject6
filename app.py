@@ -81,7 +81,7 @@ year_range
 # In[12]:
 
 
-filtered_type=df[(df.model==make_choice_man, man_option) & (df.model_year.isin(list(actual_range)))]
+filtered_type=df[(df.model==make_choice_man) | (df.model==man_option) & (df.model_year.isin(list(actual_range)))]
 
 st.table(filtered_type)
 
