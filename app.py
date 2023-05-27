@@ -56,10 +56,6 @@ man_option = st.selectbox('Select model B:', model_choice)
 
 # In[9]:
 
-
-make_choice_man
-
-
 # In[10]:
 
 
