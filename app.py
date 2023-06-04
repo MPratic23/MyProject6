@@ -30,9 +30,9 @@ df["is_4wd"] = df.groupby("model")['is_4wd'].transform(lambda x: x.fillna(x.mean
 
 df["model_year"] = df.groupby("date_posted")['model_year'].transform(lambda x: x.fillna(x.mean()))
 
-df["cylinders"] = df.groupby("transmission")['cylinders'].transform(lambda x: x.fillna(x.mean()))
+df["cylinders"] = df.groupby("model")['cylinders'].transform(lambda x: x.fillna(x.mean()))
 
-df["days_listed"] = df.groupby("paint_color")['days_listed'].transform(lambda x: x.fillna(x.mean()))
+df["paint_color"] = df.groupby("condition")['paint_color'].transform(lambda x: x.fillna(x.mean()))
 
 # In[6]:
 
