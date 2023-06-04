@@ -32,7 +32,7 @@ df["model_year"] = df.groupby("date_posted")['model_year'].transform(lambda x: x
 
 df["cylinders"] = df.groupby("model")['cylinders'].transform(lambda x: x.fillna(x.mean()))
 
-df["paint_color"] = df.groupby("condition")['paint_color'].transform(lambda x: x.fillna(x.mean()))
+df["days_listed"] = df.groupby("date_posted")['days_listed'].transform(lambda x: x.fillna(x.mean()))
 
 # In[6]:
 
