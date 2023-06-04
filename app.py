@@ -28,7 +28,7 @@ df["odometer"] = df.groupby("model_year")['odometer'].transform(lambda x: x.fill
 
 df["is_4wd"] = df.groupby("type")['is_4wd'].transform(lambda x: x.fillna(x.mean()))
 
-df["paint_color"] = df.groupby("model")['paint_color'].transform(lambda x: x.fillna(x.mean()))
+df["model"] = df.groupby("paint_color")['model'].transform(lambda x: x.fillna(x.mean()))
 
 df["model_year"] = df.groupby("days_posted")['model_year'].transform(lambda x: x.fillna(x.mean()))
 
